@@ -11,12 +11,12 @@ warnings.filterwarnings("ignore")
 
 def main():
 
-    # dataset_name = 'german_credit.csv'
-    path_data = '/home/riccardo/Documenti/PhD/OpenTheBlackBox/LORE/datasets/'
-    # dataset = prepare_german_dataset(dataset_name, path_data)
+    dataset_name = 'german_credit.csv'
+    path_data = './datasets/'
+    dataset = prepare_german_dataset(dataset_name, path_data)
 
-    dataset_name = 'compas-scores-two-years.csv'
-    dataset = prepare_compass_dataset(dataset_name, path_data)
+    #dataset_name = 'compas-scores-two-years.csv'
+    #dataset = prepare_compass_dataset(dataset_name, path_data)
     print(dataset['label_encoder'][dataset['class_name']].classes_)
     print(dataset['possible_outcomes'])
 
@@ -44,7 +44,7 @@ def main():
 
     dfX2E = build_df2explain(blackbox, X2E, dataset).to_dict('records')
     dfx = dfX2E[idx_record2explain]
-    # x = build_df2explain(blackbox, X2E[idx_record2explain].reshape(1, -1), dataset).to_dict('records')[0]
+    x = build_df2explain(blackbox, X2E[idx_record2explain].reshape(1, -1), dataset).to_dict('records')[0]
 
     print('x = %s' % dfx)
     print('r = %s --> %s' % (explanation[0][1], explanation[0][0]))
