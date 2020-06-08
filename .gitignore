@@ -1,0 +1,4 @@
+lime/node_modules/
+*.log
+*.pyc
+lime/*.pyc

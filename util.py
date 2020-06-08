@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-import _pickle as cPickle
+import pickle as cPickle
 
 from sklearn.preprocessing import LabelEncoder
 
